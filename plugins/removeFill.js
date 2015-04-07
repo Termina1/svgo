@@ -27,10 +27,10 @@ exports.fn = function(item, params) {
 
     if (!hasStyleOrScript) {
         if (item.hasAttr('fill')) {
-            item.attr('fill').value = 'none';
+            item.removeAttr('fill');
         }
         if (item.hasAttr('stroke')) {
-            item.attr('stroke').value = 'none';
+            item.removeAttr('stroke');
         }
     }
 
