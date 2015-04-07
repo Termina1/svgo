@@ -9,8 +9,7 @@ exports.params = {
     fill: true
 };
 
-var shape = require('./_collections').elemsGroups.shape,
-    styleOrScript = ['style', 'script'],
+var styleOrScript = ['style', 'script'],
     hasStyleOrScript = false;
 
 /**
@@ -26,7 +25,7 @@ exports.fn = function(item, params) {
         hasStyleOrScript = true;
     }
 
-    if (!hasStyleOrScript && item.isElem(shape)) {
+    if (!hasStyleOrScript) {
         if (item.hasAttr('fill')) {
             item.attr('fill').value = 'none';
         }
