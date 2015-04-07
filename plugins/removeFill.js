@@ -20,6 +20,13 @@ var styleOrScript = ['style', 'script'],
  *
  * @author Termina1
  */
+ 
+function replaceColor(attr) {
+    if(attr.value === '#6D6E71') {
+        attr.value = 'currentColor';
+    }
+} 
+
 exports.fn = function(item, params) {
     if (item.isElem(styleOrScript)) {
         hasStyleOrScript = true;
@@ -27,10 +34,10 @@ exports.fn = function(item, params) {
 
     if (!hasStyleOrScript) {
         if (item.hasAttr('fill')) {
-            item.removeAttr('fill');
+            replaceColor(item.attr('fill'));
         }
         if (item.hasAttr('stroke')) {
-            item.removeAttr('stroke');
+            replaceColor(item.attr('stroke'));
         }
     }
 
